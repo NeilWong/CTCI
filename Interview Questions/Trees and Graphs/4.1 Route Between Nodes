@@ -1,0 +1,30 @@
+def hasRoute(graph, start, end):
+  #Uses BFS and standard Queue implementation with addition "visited" characteristic
+  #Assume nodes have "adjacent" object which holds a list of adjacent nodes
+  
+  # See first if node to find is at start
+  if start == end:
+    return True
+  # Create a queue and set each node's visited state to False then add start as the first node in queue
+  q = Queue()
+  for node in graph:
+    node.visited = False
+  n.add(start)
+  # While queue is not empty (until we get through looking at each node conneceted to the start node) until we can declare if there's
+  # a route between start and end
+  while !q.isEmpty():
+    a = q.removeFirst()
+    #BFS -> visit each node and all its adjacent nodes first before moving on, marking each visited node as False
+    if a:
+      for node in a.adjacent:
+        if a.visited != True:
+          if a == end:
+            return True
+          # add the adjacent node to the queue to be branched upon after analyzing all the other adjacent nodes to a
+          q.add(node)
+    node.visited = True
+  #If no nodes down the path of start equal to end, return False
+  return False
+  
+  #Notes
+  
