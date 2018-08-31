@@ -1,0 +1,28 @@
+# Iterative Solution
+
+def createLinkedLists( root ):
+  result = []
+  ll = LinkedList()(LL)
+  if root != None:
+    ll.add( root )
+  # In my implementation (LL) class has a .size() which returns the size of the (LL)
+  while ll.size() > 0:
+    # Append the first layer (LL) to the final list of LinkedLists that we're going to return
+    result.append(ll)
+    # Create a copy of the (LL) with its layer of nodes in it
+    cur = ll
+    # Create a new empty (LL)
+    ll = LinkedList()
+    # We're going to traverse through the current layer of nodes that we have stored
+    curNode = cur.head
+    # This loop essentially adds the next layer's set of nodes into the newly created (LL)
+    while curNode:
+      if curNode.left != None:
+        ll.add(curNode.left)
+      if curNode.right != None:
+        ll.add(curNode.right)
+      curNode = curNode.next
+  # By the end of this we'll have a list of LinkedList comprised of all the nodes in each level stored in the list's respective
+  # index (e.g. All nodes of layer 1 in index 1 of the list stored as a (LL)
+  return result
+      
