@@ -1,0 +1,18 @@
+def minimalTree(arr):
+  if arr is None or len(arr) == 0:
+    return 
+  if len(arr) == 1:
+    return Node(arr[0])
+  else:
+    mid = len(arr)//2
+    node = Node(arr[mid])
+    node.left = minimalTree(arr[0:mid])
+    node.right = minimalTree(arr[mid+1:len(arr))
+  return node 
+  
+  #Notes
+    # If either the passed in sorted list is None or length == 0 -> return immediately
+    # if the length of the passed in list is one -> return its sole element as a Node
+    # else: set the node equal to the middle element of the passed in list
+      # set the left node to the output of the first half of the list recursively called
+      # set the right node to the output of the second half of the list recursively called
